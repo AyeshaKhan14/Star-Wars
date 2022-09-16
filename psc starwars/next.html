@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+         body{
+               background-color: rgb(22, 21, 21);
+           }
+           #bottom{
+            display: flex;
+            width: 40%;
+            height: 200px;
+            margin-top: 140px;
+            margin-left: 30%;
+            gap:20px;
+            /* border:1px solid white; */
+           }
+          #personal{
+              height:100%;
+              width:50%;
+              border: 1px solid yellow;
+              border-radius: 10px;
+              text-align:center;
+              /* padding-top: 30px; */
+              font-size: 20px;
+               color: yellow;
+          }
+         /* #top{
+             height:100px;
+             width:24%;
+             margin:auto;
+             border:1px solid white;
+            margin-top:3%;
+         } */
+          #antony{
+              height:100%;
+              width:50%;
+              border: 1px solid yellow;
+              border-radius: 10px;
+              text-align:center;
+              /* padding-top: 30px; */
+              font-size: 20px;
+               color: yellow;
+          }
+          h1{
+     
+            margin-top: 30px;
+            margin-left: 43%;
+            margin-bottom:-5%;
+            color: yellow;
+            cursor: pointer;
+
+            
+      
+        }
+
+        button{
+            margin-top:6%;
+            margin-left:45%;
+            padding:1%;
+            width:10%;
+            background-color: black;
+            border-radius: 10px;
+        }
+        a{
+            text-decoration: none;
+            color:yellow
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+        <div id="bottom">
+            <div id="personal"></div>
+            <div id="antony"></div>
+        </div>
+   <button><a href="index.html">BACK TO PAGE</a></button>
+</body>
+</html>
+
+<script>
+     
+     let data=JSON.parse(localStorage.getItem("nextdtl"))
+
+     let x=document.querySelector("#top");
+     let a=document.querySelector("#bottom");
+     let b=document.querySelector("#personal")
+     let c=document.querySelector("#antony");
+
+     //append the data in this box
+
+     let h1=document.createElement("h1")
+     h1.innerText=data.name;
+
+     let box1=document.createElement("div")
+
+     let h2=document.createElement("h2")
+     h2.innerText="Personal Information";
+
+     let birth=document.createElement("p");
+     birth.innerText="Birth Year :" + data.birth_year;
+
+     let gender=document.createElement("p")
+    gender. innerText= "Gender :" + data.gender;
+
+    let height=document.createElement("p")
+    height.innerText="Height :"+data.height;
+
+    box1.append(h2,birth,gender,height)
+    
+    let box2=document.createElement("div")
+
+    let hh=document.createElement("h2");
+    hh.innerText="Anatomy";
+
+    let eyes=document.createElement("p")
+    eyes.innerText="Eye Color :"+data.eye_color;
+
+    let mass=document.createElement("p")
+     mass.innerText="Mass :"+data.mass;
+
+     let hair=document.createElement("p")
+     hair.innerText="Hair Color :"+data.hair_color;
+
+    box2.append(hh,eyes,mass,hair)
+
+       b.append(box1)         //persnl
+       c.append(box2)         //amatony
+
+       x.append(h1)             //heading
+</script>
